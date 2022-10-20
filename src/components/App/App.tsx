@@ -1,7 +1,15 @@
 import React from "react";
+import ServicesPage from "components/pages/ServicesPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  return <div>hello</div>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<ServicesPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

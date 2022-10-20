@@ -28,6 +28,8 @@
       "__tests__/*": ["./__tests__/*"],
       "@redux": ["./src/redux"],
       "@redux/*": ["./src/redux/*"],
+      "lib": ["./src/lib"],
+      "lib/*": ["./src/lib/*"],
     },
   },
   "include": ["src"],
