@@ -5,12 +5,13 @@ import api from "./api";
 import { servicesSlice } from "./slice";
 
 export function* getServices() {
-  console.log("from saga");
-
   try {
-    const res: AxiosResponse<Service[]> = yield call(api.getServices);
+    console.log("from get services saga");
 
-    yield put(servicesSlice.actions.getServices());
+    const response: AxiosResponse<Service[]> = yield call(api.getServices);
+    const servicesData = response.data;
+
+    yield put(servicesSlice.actions.getServicesSuccess(servicesData));
   } catch (error) {
     const errorMessage = String(error) || "An unknown error occurred";
     console.error("failed to get services list: ", errorMessage);
@@ -19,7 +20,7 @@ export function* getServices() {
   }
 }
 
-export const getOsListSaga = takeLatest(
+export const getServicesSaga = takeLatest(
   servicesSlice.actions.getServices,
   getServices
 );

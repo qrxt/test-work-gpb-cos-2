@@ -4,6 +4,9 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 8014,
+  },
   resolve: {
     alias: {
       components: path.resolve(__dirname, "./src/components"),
@@ -19,10 +22,10 @@ export default defineConfig({
   plugins: [
     react({
       jsxRuntime: "automatic",
-      // jsxImportSource: "@emotion/react",
+      jsxImportSource: "@emotion/react",
       babel: {
-        // presets: ["@emotion/babel-preset-css-prop"],
-        // plugins: ["@emotion"],
+        presets: ["@emotion/babel-preset-css-prop"],
+        plugins: ["@emotion"],
       },
     }),
   ],

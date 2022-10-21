@@ -4,12 +4,15 @@ import { getEndpoint } from "lib/getEndpoint";
 export async function getServices() {
   const { path, method } = getEndpoint("getServices");
 
-  try {
-    const response = await axios({ url: path, method });
-    console.log("axios getServices response: ", response);
-  } catch (error) {
-    console.error("axios getServices error: ", error);
-  }
+  return axios({ url: path, method })
+    .then((response) => {
+      console.log("axios getServices response: ", response);
+
+      return response;
+    })
+    .catch((error) => {
+      console.error("axios getServices error: ", error);
+    });
 }
 
 const api = {
