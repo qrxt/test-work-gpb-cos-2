@@ -1,7 +1,6 @@
-import { css } from "@emotion/react";
+import React from "react";
 import Layout from "components/Layout";
 import { ServicesContainer } from "components/Services";
-import React from "react";
 
 function ServicesPage() {
   return (

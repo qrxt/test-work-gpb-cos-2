@@ -3,12 +3,9 @@ import {
   Alert,
   AlertDescription,
   AlertIcon,
-  AlertTitle,
   Box,
   Button,
   Flex,
-  Stack,
-  Text,
   VStack,
 } from "@chakra-ui/react";
 import ServicesWrapper from "./ServicesWrapper";

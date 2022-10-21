@@ -19,7 +19,18 @@ export const endpoints: Endpoints = {
     path: `${base}/services`,
     method: "GET",
   },
+
+  getService: {
+    path: `${base}/service/{serviceId}`,
+    method: "GET",
+  },
 };
+
+function insertParams(url: string, params: any) {
+  const re = /{(\w*)}/g;
+
+  return url.replace(re, (_, param) => params[param]);
+}
 
 export function getEndpoint(name: string, params?: object) {
   const endpoint = endpoints[name];
@@ -28,5 +39,8 @@ export function getEndpoint(name: string, params?: object) {
     throw new Error(`There is no endpoint with name ${name}`);
   }
 
-  return endpoint;
+  return {
+    ...endpoint,
+    path: params ? insertParams(endpoint.path, params) : endpoint.path,
+  };
 }

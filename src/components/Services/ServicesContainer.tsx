@@ -7,8 +7,7 @@ import {
   selectServices,
 } from "@redux/modules/services/selectors";
 import { servicesSlice } from "@redux/modules/services/slice";
-import ServicesSkeleton from "./ServicesSkeleton";
-import { Box } from "@chakra-ui/react";
+import ServicesLoading from "./ServicesLoading";
 import ServicesWrapper from "./ServicesWrapper";
 import ServicesError from "./ServicesError";
 
@@ -22,7 +21,7 @@ function ServicesContainer() {
     console.log("dispatching");
 
     dispatch(servicesSlice.actions.getServices());
-  }, []);
+  }, [dispatch]);
 
   if (isFailed) {
     return <ServicesError />;
@@ -30,7 +29,7 @@ function ServicesContainer() {
 
   return (
     <ServicesWrapper>
-      {isLoading ? <ServicesSkeleton /> : <Services services={services} />}
+      {isLoading ? <ServicesLoading /> : <Services services={services} />}
     </ServicesWrapper>
   );
 }
