@@ -2,12 +2,12 @@ import React, { CSSProperties } from "react";
 import { Service } from "types/service";
 import { FixedSizeList as VirtualizedList } from "react-window";
 import { size } from "lodash";
-import { Box, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
+import { Box, Link, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
 import { SettingsIcon } from "@chakra-ui/icons";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { servicesListStyles, SERVICES_LIST_ITEM_SIZE } from "./Services.style";
 import { css } from "@emotion/react";
-import { Link } from "react-router-dom";
+import { Link as ReachLink } from "react-router-dom";
 
 interface ServicesProps {
   services: Service[];
@@ -27,7 +27,7 @@ function Services(props: ServicesProps) {
     return (
       <ListItem key={service.id} style={style} css={listItemStyles}>
         <ListIcon as={SettingsIcon} color="green.500" marginRight={4} />
-        <Link to={`/service/${service.id}`}>
+        <Link as={ReachLink} to={`/service/${service.id}`}>
           <Text>{service.name}</Text>
         </Link>
       </ListItem>
@@ -40,7 +40,7 @@ function Services(props: ServicesProps) {
         {({ height, width }) => (
           <VirtualizedList
             width={width}
-            height={height - 30} // AutoSizer ignores padding bottom
+            height={height} // AutoSizer ignores padding bottom
             itemCount={size(services)}
             itemSize={SERVICES_LIST_ITEM_SIZE}
           >

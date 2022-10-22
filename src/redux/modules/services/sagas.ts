@@ -6,8 +6,6 @@ import { servicesSlice } from "./slice";
 
 export function* getServices() {
   try {
-    console.log("from get services saga");
-
     const response: AxiosResponse<Service[]> = yield call(api.getServices);
     const servicesData = response.data;
 

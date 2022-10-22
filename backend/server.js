@@ -97,6 +97,7 @@ function getRandomInt(min, max) {
 
 function theErrorIsComing(res) {
   if (!(getRandomInt(0, 666) % 13)) {
+    // if (Math.random() > 0.5) {
     console.log(`theErrorIsComing`);
     res.statusMessage = "The error is coming.";
     res.statusCode = 500;
@@ -149,6 +150,7 @@ app.get("/api/services", async function (req, res) {
 
 app.post("/api/services/:serviceId", function (req, res) {
   const { serviceId } = req.params;
+
   theErrorIsComing(res) ||
     theDelayIsComing(() => {
       const { id = serviceId, name, price, content } = req.body;
@@ -170,6 +172,8 @@ app.post("/api/services/:serviceId", function (req, res) {
 });
 
 app.get("/api/services/:serviceId", async function (req, res) {
+  console.log(req.params.serviceId);
+
   theErrorIsComing(res) ||
     theDelayIsComing(() => {
       console.log(`getting...`);

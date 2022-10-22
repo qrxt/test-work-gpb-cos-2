@@ -16,7 +16,7 @@ export function setupStore() {
   const sagaMiddleware = createSagaMiddleware();
 
   const store = configureStore({
-    devTools: process.env.NODE_ENV !== "production",
+    devTools: true,
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) => [
       ...getDefaultMiddleware({ thunk: false }),

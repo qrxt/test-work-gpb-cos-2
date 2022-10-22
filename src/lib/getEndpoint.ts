@@ -21,7 +21,7 @@ export const endpoints: Endpoints = {
   },
 
   getService: {
-    path: `${base}/service/{serviceId}`,
+    path: `${base}/services/{serviceId}`,
     method: "GET",
   },
 };

@@ -9,7 +9,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import ServicesWrapper from "./ServicesWrapper";
-import { SERVICES_LIST_WIDTH, SERVICES_LIST_HEIGHT } from "./Services.style";
 import { css } from "@emotion/react";
 import { useDispatch } from "react-redux";
 import { servicesSlice } from "@redux/modules/services/slice";
@@ -26,10 +25,15 @@ function ServicesError() {
   }
 
   return (
-    <ServicesWrapper>
-      <Box width={SERVICES_LIST_WIDTH} height={SERVICES_LIST_HEIGHT}>
-        <Flex justifyContent="center" alignItems="center" css={wrapperStyles}>
-          <VStack>
+    <ServicesWrapper heading="Услуги">
+      <Box
+        css={wrapperStyles}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Flex justifyContent="center" alignItems="center">
+          <VStack padding={6}>
             <Alert status="error">
               <AlertIcon />
               <AlertDescription>Произошла ошибка!</AlertDescription>

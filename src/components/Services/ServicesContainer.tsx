@@ -18,8 +18,6 @@ function ServicesContainer() {
   const { isFailed } = useSelector(selectError);
 
   useEffect(() => {
-    console.log("dispatching");
-
     dispatch(servicesSlice.actions.getServices());
   }, [dispatch]);
 
@@ -28,7 +26,7 @@ function ServicesContainer() {
   }
 
   return (
-    <ServicesWrapper>
+    <ServicesWrapper heading="Услуги">
       {isLoading ? <ServicesLoading /> : <Services services={services} />}
     </ServicesWrapper>
   );

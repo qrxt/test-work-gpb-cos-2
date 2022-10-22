@@ -12,6 +12,7 @@ function AppContainer() {
       global: {
         "html, body, #root": {
           height: "100%",
+          backgroundColor: "#f7f5f5",
         },
       },
     },

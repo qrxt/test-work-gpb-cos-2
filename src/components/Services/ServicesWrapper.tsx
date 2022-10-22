@@ -7,7 +7,13 @@ const servicesWrapperStyles = css`
   height: ${SERVICES_LIST_HEIGHT}px;
 `;
 
-function ServicesWrapper({ children }: { children: React.ReactNode }) {
+interface ServicesWrapperProps {
+  children: React.ReactNode;
+  heading: string;
+}
+
+function ServicesWrapper(props: ServicesWrapperProps) {
+  const { children, heading } = props;
   return (
     <Box
       padding="6"
@@ -15,9 +21,11 @@ function ServicesWrapper({ children }: { children: React.ReactNode }) {
       boxShadow="lg"
       bg="white"
       css={servicesWrapperStyles}
+      display="flex"
+      flexDirection="column"
     >
       <Heading size="lg" marginBottom={3}>
-        Сервисы
+        {heading}
       </Heading>
       {children}
     </Box>
