@@ -7,6 +7,7 @@ import { SettingsIcon } from "@chakra-ui/icons";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { servicesListStyles, SERVICES_LIST_ITEM_SIZE } from "./Services.style";
 import { css } from "@emotion/react";
+import { Link } from "react-router-dom";
 
 interface ServicesProps {
   services: Service[];
@@ -26,28 +27,28 @@ function Services(props: ServicesProps) {
     return (
       <ListItem key={service.id} style={style} css={listItemStyles}>
         <ListIcon as={SettingsIcon} color="green.500" marginRight={4} />
-        <Text>{service.name}</Text>
+        <Link to={`/service/${service.id}`}>
+          <Text>{service.name}</Text>
+        </Link>
       </ListItem>
     );
   };
 
   return (
-    <Box>
-      <List css={servicesListStyles}>
-        <AutoSizer>
-          {({ height, width }) => (
-            <VirtualizedList
-              width={height}
-              height={width}
-              itemCount={size(services)}
-              itemSize={SERVICES_LIST_ITEM_SIZE}
-            >
-              {Row}
-            </VirtualizedList>
-          )}
-        </AutoSizer>
-      </List>
-    </Box>
+    <List css={servicesListStyles}>
+      <AutoSizer>
+        {({ height, width }) => (
+          <VirtualizedList
+            width={width}
+            height={height - 30} // AutoSizer ignores padding bottom
+            itemCount={size(services)}
+            itemSize={SERVICES_LIST_ITEM_SIZE}
+          >
+            {Row}
+          </VirtualizedList>
+        )}
+      </AutoSizer>
+    </List>
   );
 }
 

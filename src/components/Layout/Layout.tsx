@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Container, Flex } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import React from "react";
 
@@ -8,15 +8,26 @@ interface LayoutProps {
 
 function Layout(props: LayoutProps) {
   const { children } = props;
-  const wrapperStyles = css`
-    height: 100%;
+  const layoutWrapperStyles = css`
     width: 100%;
   `;
-
   return (
-    <Flex justifyContent="center" alignItems="center" css={wrapperStyles}>
-      <Box>{children}</Box>
-    </Flex>
+    <Container
+      maxW="container.sm"
+      css={css`
+        height: 100%;
+      `}
+    >
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        css={css`
+          height: 100%;
+        `}
+      >
+        <Box css={layoutWrapperStyles}>{children}</Box>
+      </Flex>
+    </Container>
   );
 }
 

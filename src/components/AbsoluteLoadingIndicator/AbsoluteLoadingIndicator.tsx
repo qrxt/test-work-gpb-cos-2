@@ -2,8 +2,9 @@ import { Box, Flex, Portal, Spinner, Text } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import React from "react";
 
-const wrapperStyles = css`
+const loaderWrapperStyles = css`
   position: relative;
+  width: 100%;
 `;
 const indicatorWrapperStyles = css`
   position: absolute;
@@ -14,7 +15,7 @@ const indicatorWrapperStyles = css`
 
 function AbsoluteLoadingIndicator({ children }: { children: React.ReactNode }) {
   return (
-    <Box css={wrapperStyles}>
+    <Box css={loaderWrapperStyles}>
       <Portal>
         <Box
           css={indicatorWrapperStyles}
