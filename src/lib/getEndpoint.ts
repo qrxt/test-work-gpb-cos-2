@@ -26,13 +26,17 @@ export const endpoints: Endpoints = {
   },
 };
 
-function insertParams(url: string, params: any) {
+interface QueryParams {
+  [key: string]: string;
+}
+
+function insertParams(url: string, params: QueryParams) {
   const re = /{(\w*)}/g;
 
   return url.replace(re, (_, param) => params[param]);
 }
 
-export function getEndpoint(name: string, params?: object) {
+export function getEndpoint(name: string, params?: QueryParams) {
   const endpoint = endpoints[name];
 
   if (!endpoint) {

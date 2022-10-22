@@ -2,7 +2,7 @@ import React, { CSSProperties } from "react";
 import { Service } from "types/service";
 import { FixedSizeList as VirtualizedList } from "react-window";
 import { size } from "lodash";
-import { Box, Link, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
+import { Link, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
 import { SettingsIcon } from "@chakra-ui/icons";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { servicesListStyles, SERVICES_LIST_ITEM_SIZE } from "./Services.style";

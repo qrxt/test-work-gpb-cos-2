@@ -23,7 +23,7 @@ export const serviceSlice = createSlice({
   name: "service",
   initialState,
   reducers: {
-    getService(state, action: PayloadAction<GetServicePayload>) {
+    getService(state, _action: PayloadAction<GetServicePayload>) {
       state.isLoading = true;
       state.isFailed = false;
       state.errorMessage = "";

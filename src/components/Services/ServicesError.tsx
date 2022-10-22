@@ -1,17 +1,10 @@
 import React from "react";
-import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  Box,
-  Button,
-  Flex,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import ServicesWrapper from "./ServicesWrapper";
 import { css } from "@emotion/react";
 import { useDispatch } from "react-redux";
 import { servicesSlice } from "@redux/modules/services/slice";
+import ResponseErrorAlert from "components/ResponseErrorAlert";
 
 const wrapperStyles = css`
   width: 100%;
@@ -33,15 +26,7 @@ function ServicesError() {
         alignItems="center"
       >
         <Flex justifyContent="center" alignItems="center">
-          <VStack padding={6}>
-            <Alert status="error">
-              <AlertIcon />
-              <AlertDescription>Произошла ошибка!</AlertDescription>
-            </Alert>
-            <Button w="100%" onClick={repeatRequestHandle}>
-              Повторить запрос
-            </Button>
-          </VStack>
+          <ResponseErrorAlert repeatRequestHandle={repeatRequestHandle} />
         </Flex>
       </Box>
     </ServicesWrapper>

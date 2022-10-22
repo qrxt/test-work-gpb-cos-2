@@ -19,7 +19,7 @@ function ServiceContainer(props: ServiceContainerProps) {
   const dispatch = useDispatch();
   const { serviceId } = props;
 
-  const service = useSelector(selectService)!;
+  const service = useSelector(selectService);
   const isLoading = useSelector(selectIsLoading) || !service;
   const { isFailed } = useSelector(selectError);
 
