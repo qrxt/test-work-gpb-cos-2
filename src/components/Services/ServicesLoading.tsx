@@ -6,7 +6,7 @@ import { SERVICES_LIST_HEIGHT } from "./Services.style";
 function ServicesLoading() {
   return (
     <AbsoluteLoadingIndicator>
-      <Box height={SERVICES_LIST_HEIGHT}>
+      <Box>
         <SkeletonText noOfLines={8} spacing="7" />
       </Box>
     </AbsoluteLoadingIndicator>

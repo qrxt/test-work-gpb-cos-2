@@ -1,6 +1,5 @@
 import React from "react";
 import { ServiceContainer } from "components/Service";
-import Layout from "components/Layout";
 import { useParams } from "react-router-dom";
 
 interface ServiceParams {
@@ -10,11 +9,7 @@ interface ServiceParams {
 function ServicePage() {
   const { serviceId } = useParams<keyof ServiceParams>() as ServiceParams;
 
-  return (
-    <Layout>
-      <ServiceContainer serviceId={serviceId} />
-    </Layout>
-  );
+  return <ServiceContainer serviceId={serviceId} />;
 }
 
 export default ServicePage;

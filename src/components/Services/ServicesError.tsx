@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Box, Flex } from "@chakra-ui/react";
 import ServicesWrapper from "./ServicesWrapper";
 import { css } from "@emotion/react";
@@ -13,9 +13,10 @@ const wrapperStyles = css`
 
 function ServicesError() {
   const dispatch = useDispatch();
-  function repeatRequestHandle() {
+
+  const repeatRequestHandle = useCallback(() => {
     dispatch(servicesSlice.actions.getServices());
-  }
+  }, [dispatch]);
 
   return (
     <ServicesWrapper heading="Услуги">
