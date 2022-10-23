@@ -8,7 +8,7 @@ const config = {
     },
   },
   testEnvironment: "jsdom",
-  setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
+  setupFilesAfterEnv: ["<rootDir>/setupTests.ts"],
   testMatch: [
     "**/__tests__/**/*.test.[jt]s?(x)",
     "**/?(*.)+(spec|test).[jt]s?(x)",
@@ -17,8 +17,14 @@ const config = {
     "^__tests__/(.*)$": "<rootDir>/__tests__/$1",
     "^components/(.*)$": "<rootDir>/src/components/$1",
     "^messages/(.*)$": "<rootDir>/src/messages/$1",
-    "^theme/(.*)$": "<rootDir>/src/theme/$1",
     "^messages$": "<rootDir>/src/messages/index.ts",
+    "^theme/(.*)$": "<rootDir>/src/theme/$1",
+
+    "^types/(.*)$": "<rootDir>/src/types/$1",
+    "^lib/(.*)$": "<rootDir>/src/lib/$1",
+    "^@redux/(.*)$": "<rootDir>/src/redux/$1",
+    "^@redux$": "<rootDir>/src/redux/index.ts",
+
     "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
       "<rootDir>/__tests__/mocks/fileMock.ts",
     "\\.(css|less)$": "<rootDir>/__tests__/mocks/fileMock.ts",
