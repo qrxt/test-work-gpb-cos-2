@@ -5,7 +5,7 @@ import AbsoluteLoadingIndicator from "components/AbsoluteLoadingIndicator";
 function ServicesLoading() {
   return (
     <AbsoluteLoadingIndicator>
-      <Box>
+      <Box data-testid="services-loading-indicator-skeleton">
         <SkeletonText noOfLines={8} spacing="7" />
       </Box>
     </AbsoluteLoadingIndicator>

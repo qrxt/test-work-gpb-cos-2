@@ -27,7 +27,10 @@ function ServicesError() {
         alignItems="center"
       >
         <Flex justifyContent="center" alignItems="center">
-          <ResponseErrorAlert repeatRequestHandle={repeatRequestHandle} />
+          <ResponseErrorAlert
+            repeatRequestHandle={repeatRequestHandle}
+            dataTestPrefix="services"
+          />
         </Flex>
       </Box>
     </ServicesWrapper>

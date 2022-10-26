@@ -25,7 +25,12 @@ function Services(props: ServicesProps) {
     const service = services[index];
 
     return (
-      <ListItem key={service.id} style={style} css={listItemStyles}>
+      <ListItem
+        key={service.id}
+        style={style}
+        css={listItemStyles}
+        data-testid="service-list-item"
+      >
         <ListIcon as={SettingsIcon} color="green.500" marginRight={4} />
         <Link as={ReachLink} to={`/service/${service.id}`}>
           <Text>{service.name}</Text>
@@ -35,12 +40,12 @@ function Services(props: ServicesProps) {
   };
 
   return (
-    <List css={servicesListStyles}>
+    <List css={servicesListStyles} data-testid="services-list">
       <AutoSizer>
         {({ height, width }) => (
           <VirtualizedList
             width={width}
-            height={height} // AutoSizer ignores padding bottom
+            height={height}
             itemCount={size(services)}
             itemSize={SERVICES_LIST_ITEM_SIZE}
           >
