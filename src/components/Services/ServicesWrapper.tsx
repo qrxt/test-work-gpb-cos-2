@@ -24,7 +24,11 @@ function ServicesWrapper(props: ServicesWrapperProps) {
       display="flex"
       flexDirection="column"
     >
-      <Heading size="lg" marginBottom={3}>
+      <Heading
+        size="lg"
+        marginBottom={3}
+        data-testid="services-wrapper-heading"
+      >
         {heading}
       </Heading>
       {children}

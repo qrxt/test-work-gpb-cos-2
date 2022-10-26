@@ -1,13 +1,13 @@
 import React, { CSSProperties } from "react";
-import { Service } from "types/service";
 import { FixedSizeList as VirtualizedList } from "react-window";
 import { size } from "lodash";
 import { Link, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
 import { SettingsIcon } from "@chakra-ui/icons";
 import AutoSizer from "react-virtualized-auto-sizer";
-import { servicesListStyles, SERVICES_LIST_ITEM_SIZE } from "./Services.style";
 import { css } from "@emotion/react";
 import { Link as ReachLink } from "react-router-dom";
+import { Service } from "types/service";
+import { servicesListStyles, SERVICES_LIST_ITEM_SIZE } from "./Services.style";
 
 interface ServicesProps {
   services: Service[];

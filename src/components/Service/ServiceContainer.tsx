@@ -32,6 +32,7 @@ function ServiceContainer(props: ServiceContainerProps) {
   }
 
   const heading = isLoading ? "Услуга ..." : `Услуга "${service.name}"`;
+
   return (
     <ServicesWrapper heading={heading}>
       {isLoading ? <ServiceLoading /> : <Service service={service} />}

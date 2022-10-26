@@ -7,7 +7,8 @@ const config = {
       isolatedModules: true,
     },
   },
-  testEnvironment: "jsdom",
+  testEnvironment: "jest-environment-jsdom",
+  extensionsToTreatAsEsm: [".jsx"],
   setupFilesAfterEnv: ["<rootDir>/setupTests.ts"],
   testMatch: [
     "**/__tests__/**/*.test.[jt]s?(x)",

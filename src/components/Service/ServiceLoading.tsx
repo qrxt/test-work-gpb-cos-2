@@ -5,7 +5,7 @@ import React from "react";
 function ServiceLoading() {
   return (
     <AbsoluteLoadingIndicator>
-      <Box>
+      <Box data-testid="service-loading-indicator-skeleton">
         <SkeletonText noOfLines={2} spacing="4" marginBottom={6} />
         <SkeletonText noOfLines={2} spacing="4" />
       </Box>

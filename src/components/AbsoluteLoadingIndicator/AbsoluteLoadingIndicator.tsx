@@ -15,7 +15,7 @@ const indicatorWrapperStyles = css`
 
 function AbsoluteLoadingIndicator({ children }: { children: React.ReactNode }) {
   return (
-    <Box css={loaderWrapperStyles}>
+    <Box css={loaderWrapperStyles} data-testid="loading-indicator">
       <Portal>
         <Box
           css={indicatorWrapperStyles}

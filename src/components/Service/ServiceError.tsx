@@ -24,9 +24,13 @@ function ServiceError({ serviceId }: { serviceId: string }) {
         display="flex"
         justifyContent="center"
         alignItems="center"
+        data-testid="service-error-wrapper"
       >
         <Flex justifyContent="center" alignItems="center">
-          <ResponseErrorAlert repeatRequestHandle={repeatRequestHandle} />
+          <ResponseErrorAlert
+            repeatRequestHandle={repeatRequestHandle}
+            dataTestPrefix="service"
+          />
         </Flex>
       </Box>
     </ServicesWrapper>

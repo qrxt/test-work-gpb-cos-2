@@ -13,21 +13,22 @@ const serviceValueStyles = css`
 
 function Service(props: ServiceProps) {
   const { service } = props;
-  console.log(service);
 
   return (
     <dl>
       <dt>
-        <Heading size="sm">Цена</Heading>
+        <Heading size="sm" data-testid="service-price-heading">
+          Цена
+        </Heading>
       </dt>
-      <dd css={serviceValueStyles}>
+      <dd css={serviceValueStyles} data-testid="service-price-value">
         <Text>{service.price}₽</Text>
       </dd>
 
-      <dt>
+      <dt data-testid="service-description-heading">
         <Heading size="sm">Описание услуги</Heading>
       </dt>
-      <dd css={serviceValueStyles}>
+      <dd css={serviceValueStyles} data-testid="service-description-value">
         <Text>{service.content}</Text>
       </dd>
     </dl>
