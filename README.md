@@ -1,6 +1,8 @@
 Тестовое задание:
 [Задание](https://github.com/GPB-COS/test-work-react/tree/master/test%202)
 
+backend/server.js является частью готового кода из задания.
+
 ## Установка
 
 ```sh
